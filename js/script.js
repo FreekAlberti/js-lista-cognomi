@@ -5,10 +5,12 @@ var cognomi = ["Bianchi", "Rossi", "Duzioni", "Balsano", "Verdi"];
 //chiedere all'utente il cognome
 
 var cognomeUtente = prompt("Scrivi il tuo cognome");
+var tuttoMinuscolo = cognomeUtente.toLowerCase();
+var cogUtenteCorrectCase = tuttoMinuscolo[0].toUpperCase() + tuttoMinuscolo.slice(1);
 
 //inserirlo in array
 
-cognomi.push(cognomeUtente);
+cognomi.push(cogUtenteCorrectCase);
 
 //stampa elementi array in ordine alfabetico
 
@@ -18,7 +20,7 @@ console.log(cognomi);
 //scrivi la posizione del cognome inserito
 
 for (var i = 0; i < cognomi.length; i++) {
-  if (cognomi[i] == cognomeUtente) {
+  if (cognomi[i] == cogUtenteCorrectCase) {
     i++
     console.log("La posizione del cognome é la numero: " + i)
   }
